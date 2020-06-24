@@ -1,0 +1,71 @@
+go build :- compiles file, file can them be run by ./*file name*
+go run - compiles and execute one of two files
+go fmt - format all the codes in the current directory
+go install - compiles and installs a package
+go get - download raw source code of someone else's package
+go test - Run any test associated with current project.
+
+There are 2 types of packages;
+i) Executable -: It spits out a runnable file/execution and it uses package "main" and it must always contain "func main(){ }"
+ii) dependency type -: Defines a package that can be used as a dependency/helper. i.e it can't be built. You can't run "go build "file name" " on it.
+
+
+/****golang.org/pkg****/
+
+// var card string = "Ace of Spades"
+	card := "Ace of Spades"  //Go compiler to figure out the type
+	card String = "Five of Diamonds"
+
+Slices are arrays that shrink and expand. Also, every element in a slice my be of same type.
+
+declaring a slice in go -: cards := []string
+
+	cards := []string{"Ace of Diamonds", newCard()} //cards of type slice that contains thee new card and Ace elements
+	cards = append(cards, "Six of spades")
+
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
+
+	i -: index of the element in the arrays
+	card -: current card being iterated over
+	range -: take the slice of card and loop over it
+
+	//go run main.go deck.go
+
+	func (d deck) print() {} //a receiver function; //any variable of type deck now has access to the print method.
+	d is the actual copy of the deck.
+	deck means every variable of type deck can call the function.
+
+	func (d string) string {
+		return 'hello'
+	}
+
+	underscore is used to replace the unused index to avoid golang error
+
+	function signature is the type of the elements being returned by a function.
+
+	fruits = {"apple", "banana", "grape", "orange"}
+
+	fruits[0] = "apple"
+	fruits[1] = 'banana'
+	fruits[0:2] = {"apple", "banana"}. //[apple (startindexIncluding): banana [up to 2(grape) but not including 2]];//give me everything from 0, up to 2 but don't include 2
+	fruits[:2] === fruits[0:2]
+	fruits[2:] = {grape, orange} //give me everthing from 2
+
+//asciitable.com //you can turn byte slice to strings there
+
+
+//Converting types//
+greeting := "Hi there"
+
+fmt.Println([]byte(greeting)) outputs [72 105 32 116 104 101 114 101]. Hi there has been changed to a byte format.
+
+
+fmt.Printf("%+v", jim) //"%+v" shows key + value whereas "%v" shows only value// {Jim Party {jim@gmail.com 94000}} vs {firstName:Jim lastName:Party contact:{email:jim@gmail.com zipCode:94000}}
+
+When we create a slice, Go will automatically create which two data structures, 1) an array 2) a structure that records the length of the slice, the capacity of the slice, and a reference to the underlying array.
+
+Int, float, string, bool and structs are value types. i.e you need pointers to update them in a function because a replica of them is made in memory.
+
+slices, maps, channels, pointers, functions are reference types because you don't need pointers to update their value in memory when passed in a function
