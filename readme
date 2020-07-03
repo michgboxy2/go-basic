@@ -68,4 +68,5 @@ When we create a slice, Go will automatically create which two data structures, 
 
 Int, float, string, bool and structs are value types. i.e you need pointers to update them in a function because a replica of them is made in memory.
 
-slices, maps, channels, pointers, functions are reference types because you don't need pointers to update their value in memory when passed in a function
+slices, maps, channels, pointers, functions are reference types because you don't need pointers to update their value in memory when passed in a function.
+
